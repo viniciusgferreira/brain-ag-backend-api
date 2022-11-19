@@ -4,10 +4,10 @@ const port = 3000;
 const app = express();
 
 app.get('/', (req, res) => {
-	res.send('Get Its working');
+	res.send('Get its working');
 });
 
 app.listen(port, () => {
-	console.log(`server is running on http://localhost:${port}`);
+	console.log(`Server is running on http://localhost:${port}`);
 });
 
