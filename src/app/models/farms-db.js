@@ -5,7 +5,7 @@ export const client = new Client({
 	user: 'brainag',
 	host: 'localhost',
 	database: 'farmsdb',
-	password: 'aussie12',
+	password: 'brainpw',
 	port: 5432,
 	max: 1,
 	IdleTimeoutMillis: 30000
