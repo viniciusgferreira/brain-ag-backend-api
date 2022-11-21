@@ -1,12 +1,13 @@
-import { client } from '../../models/farms-db.js';
+import { pool } from '../../models/farms-db.js';
 
 //Send json to user from database
 export default async function listFarms(req, res) {
-	client.connect(function (err) {
+	pool.query('SELECT * FROM farms', (err, results) => {
 		if (err) throw err;
-		console.log('Connected!');
+
+		res.status(200).json(results.rows);
 	});
 
-	res.status(200).end();
+
 }
 

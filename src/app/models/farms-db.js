@@ -1,7 +1,7 @@
 import pg from 'pg';
-const Client = pg.Client;
+const Pool = pg.Pool;
 
-export const client = new Client({
+export const pool = new Pool({
 	user: 'brainag',
 	host: 'localhost',
 	database: 'farmsdb',
@@ -10,9 +10,3 @@ export const client = new Client({
 	max: 1,
 	IdleTimeoutMillis: 30000
 });
-
-
-/* client.connect(function (err) {
-	if (err) throw err;
-	console.log('Connected!');
-}); */
