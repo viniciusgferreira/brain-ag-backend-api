@@ -7,12 +7,12 @@ export default async function addFarm(req, res) {
 		text: 'INSERT INTO farms(document, productor_name, farm_name, state, city, total_area, area_agriculture, area_vegetation, cultures) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)',
 		values: [document, productor_name, farm_name, state, city, total_area, area_agriculture, area_vegetation, cultures]
 	};
-	pool.query(query, (err, results) => {
+	pool.query(query, (err) => {
 		if (err) {
 			console.log(err);
 			res.status(500);
 		} else {
-			res.status(200).json(results.rows);
+			res.status(201).json();
 		}
 	});
 
