@@ -10,7 +10,7 @@ export default async function addFarm(req, res) {
 	pool.query(query, (err) => {
 		if (err) {
 			console.log(err);
-			res.status(500);
+			res.status(500).end();
 		} else {
 			res.status(201).json();
 		}
