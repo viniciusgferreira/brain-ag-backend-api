@@ -14,6 +14,6 @@ router.get('/farms/:id', listFarmById);
 //ADD NEW FARM
 router.post('/farms', addFarm);
 //EDIT FARM INFO
-router.put('/farms', editFarm);
+router.put('/farms/:id', editFarm);
 //DELETE FARM
-router.delete('/farms', deleteFarm);
+router.delete('/farms/:id', deleteFarm);
