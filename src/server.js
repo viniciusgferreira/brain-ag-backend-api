@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import { router } from './app/routes/router.js';
 
 
@@ -8,6 +9,8 @@ const app = express();
 //BODY PARSER JSON
 app.use(express.json());
 
+// CORS
+app.use(cors());
 //CONTROLLER
 app.use(router);
 
