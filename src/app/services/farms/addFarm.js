@@ -2,7 +2,14 @@ import { pool } from '../../models/farms-db.js';
 
 //handle json from user and add to database
 export default async function addFarm(req, res) {
+	// GET ALL INPUT JSON FIELDS
 	const { document, productor_name, farm_name, state, city, total_area, area_agriculture, area_vegetation, cultures } = req.body;
+
+	// Testing area Limits (total_area = area_vegetation + area_agriculture)
+	if ((total_area + area_agriculture) != area_vegetation) {
+		res.status(400).send('Total area do not match sum of agriculture + vegetation area');
+		return 0;
+	}
 	const query = {
 		text: 'INSERT INTO farms(document, productor_name, farm_name, state, city, total_area, area_agriculture, area_vegetation, cultures) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)',
 		values: [document, productor_name, farm_name, state, city, total_area, area_agriculture, area_vegetation, cultures]
@@ -15,6 +22,5 @@ export default async function addFarm(req, res) {
 			res.status(201).json();
 		}
 	});
-
 }
 
