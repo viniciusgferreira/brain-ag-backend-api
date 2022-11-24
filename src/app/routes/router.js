@@ -3,6 +3,7 @@ import addFarm from '../services/farms/addFarm.js';
 import listFarmById from '../services/farms/listFarmById.js';
 import listFarms from '../services/farms/listFarms.js';
 import editFarm from '../services/farms/editFarm.js';
+import deleteFarm from '../services/farms/deleteFarm.js';
 
 export const router = Router();
 
@@ -15,3 +16,4 @@ router.post('/farms', addFarm);
 //EDIT FARM INFO
 router.put('/farms', editFarm);
 //DELETE FARM
+router.delete('/farms', deleteFarm);
