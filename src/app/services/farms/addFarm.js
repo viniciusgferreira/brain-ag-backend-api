@@ -5,8 +5,8 @@ export default async function addFarm(req, res) {
 	// GET ALL INPUT JSON FIELDS
 	const { document, productor_name, farm_name, state, city, total_area, area_agriculture, area_vegetation, cultures } = req.body;
 
-	// Testing area Limits (total_area = area_vegetation + area_agriculture)
-	if ((total_area + area_agriculture) != area_vegetation) {
+	// Testing area Limits (area_vegetation = area_vegetation + total_area)
+	if ((area_vegetation + area_agriculture) != total_area) {
 		res.status(400).send('Total area do not match sum of agriculture + vegetation area');
 		return 0;
 	}
