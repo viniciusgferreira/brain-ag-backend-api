@@ -4,7 +4,9 @@ import listFarmById from '../services/farms/listFarmById.js';
 import listFarms from '../services/farms/listFarms.js';
 import editFarm from '../services/farms/editFarm.js';
 import deleteFarm from '../services/farms/deleteFarm.js';
-import listFarmByState from '../services/farms/listFarmByState.js';
+import listFarmsByState from '../services/farms/listFarmsByState.js';
+import listFarmsByCulture from '../services/farms/listFarmsByCulture.js';
+import listFarmsBySolo from '../services/farms/listFarmsBySolo.js';
 
 export const router = Router();
 
@@ -20,4 +22,6 @@ router.put('/farms/:id', editFarm);
 router.delete('/farms/:id', deleteFarm);
 
 //DASHBOARD
-router.get('/graph-state', listFarmByState);
+router.get('/graph-state', listFarmsByState);
+router.get('/graph-culture', listFarmsByCulture);
+router.get('/graph-solo', listFarmsBySolo);
