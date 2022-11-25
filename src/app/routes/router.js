@@ -7,12 +7,15 @@ import deleteFarm from '../services/farms/deleteFarm.js';
 import listFarmsByState from '../services/farms/listFarmsByState.js';
 import listFarmsByCulture from '../services/farms/listFarmsByCulture.js';
 import listFarmsBySolo from '../services/farms/listFarmsBySolo.js';
+import totalFarms from '../services/farms/totalFarms.js';
 
 export const router = Router();
 
 //LIST FARMS
 router.get('/farms', listFarms);
 router.get('/farms/:id', listFarmById);
+router.get('/farms-total', totalFarms);
+
 
 //ADD NEW FARM
 router.post('/farms', addFarm);
