@@ -17,7 +17,7 @@ app.use(router);
 
 
 //SERVER START
-app.listen(port, () => {
+app.listen(process.env.PORT || port, '0.0.0.0', () => {
 	console.log(`Server is running on http://localhost:${port}`);
 });
 
