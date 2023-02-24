@@ -10,36 +10,34 @@ Node.Js
 Express.js
 PostgreSQL
 
-
-
 ## API Endpoints (Farms)
 
 #### Manage Farms database
-GET /farms  
-GET /farms/:id  
-POST /farms  
-PUT /farms/:id  
-DELETE /farms/:id  
+GET /farms
+GET /farms/:id
+POST /farms
+PUT /farms/:id
+DELETE /farms/:id
 
 #### Get Graphs and Farm Stats
-GET /farms-total  
-GET /graph-state  
-GET /graph-culture  
-GET /graph-solo  
+GET /farms-total
+GET /graph-state
+GET /graph-culture
+GET /graph-solo
 
 ### The Farm Object
-id:auto-generated integer  
-document:string  
-productor_name:string  
-farm_name:string  
-state:string  
-city:string  
-total_area:integer  
-area_agriculture:integer  
-area_vegetation:integer  
-cultures:[string]  
+id:auto-generated integer
+document:string
+productor_name:string
+farm_name:string
+state:string
+city:string
+total_area:integer
+area_agriculture:integer
+area_vegetation:integer
+cultures:[string]
 
-### Example JSON 
+### Example JSON
 ```javascript
 {
     "id": 20,
